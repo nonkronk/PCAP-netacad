@@ -69,7 +69,7 @@ def DrawMove(board):
     #
     from random import randrange
     while True:
-        comMove = randrange(1, 9)
+        comMove = randrange(1, 10)
         for i in range(3):
             for j in range(3):
                 if board[i][j] == comMove:
@@ -78,10 +78,12 @@ def DrawMove(board):
                     return
 
 board = [[1, 2, 3],[4, "X", 6], [7, 8, 9]]
-while True:
+for i in range(4):
     EnterMove(board)
     DisplayBoard(board)
     DrawMove(board)
+    if VictoryFor(board, "O") == None and VictoryFor(board, "X") == None:
+        print("It's a tie!")
     if VictoryFor(board, "X") == "X":
         print("You lose!")
         break
