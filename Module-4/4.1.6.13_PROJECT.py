@@ -25,7 +25,6 @@ def EnterMove(board):
     # the function accepts the board current status, asks the user about their move,
     # checks the input and updates the board according to the user's decision
     #
-    DisplayBoard(board)
     while True:
         userMove = int(input("Enter your move: "))
         if userMove not in range(1, 10):
@@ -74,19 +73,23 @@ def DrawMove(board):
             for j in range(3):
                 if board[i][j] == comMove:
                     board[i][j] = "X"
-                    DisplayBoard(board)
                     return
 
 board = [[1, 2, 3],[4, "X", 6], [7, 8, 9]]
 for i in range(4):
+    DisplayBoard(board)
     EnterMove(board)
     DisplayBoard(board)
     DrawMove(board)
-    if VictoryFor(board, "O") == None and VictoryFor(board, "X") == None:
-        print("It's a tie!")
     if VictoryFor(board, "X") == "X":
+        DisplayBoard(board)
         print("You lose!")
         break
     if VictoryFor(board, "O") == "O":
+        DisplayBoard(board)
         print("You won!")
         break
+
+if VictoryFor(board, "O") == None and VictoryFor(board, "X") == None:
+    DisplayBoard(board)
+    print("It's a tie!")
