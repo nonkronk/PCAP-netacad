@@ -26,7 +26,10 @@ def EnterMove(board):
     # checks the input and updates the board according to the user's decision
     #
     while True:
-        userMove = int(input("Enter your move: "))
+        try:
+            userMove = int(input("Enter your move: "))
+        except ValueError:
+            continue
         if userMove not in range(1, 10):
             continue
         for i in range(3):
@@ -34,18 +37,6 @@ def EnterMove(board):
                 if userMove == board[i][j]:
                     board[i][j] = "O"
                     return
-
-def MakeListOfFreeFields(board):
-    #
-    # the function browses the board and builds a list of all the free squares;
-    # the list consists of tuples, while each tuple is a pair of row and column numbers
-    #
-    freeFields = []
-    for i in range(3):
-        for j in range(3):
-            if board[i][j] != "O" and board[i][j] != "X":
-                freeFields.append(tuple([i, j]))
-    return freeFields
 
 def VictoryFor(board, sign):
     #
@@ -75,21 +66,27 @@ def DrawMove(board):
                     board[i][j] = "X"
                     return
 
+# Initialize the board
 board = [[1, 2, 3],[4, "X", 6], [7, 8, 9]]
+
+# Main tictactoe program
 for i in range(4):
     DisplayBoard(board)
     EnterMove(board)
     DisplayBoard(board)
     DrawMove(board)
+    # Print when the computer win
     if VictoryFor(board, "X") == "X":
         DisplayBoard(board)
         print("You lose!")
         break
+    # Print when the user win
     if VictoryFor(board, "O") == "O":
         DisplayBoard(board)
         print("You won!")
         break
 
+# Print when a tie occured
 if VictoryFor(board, "O") == None and VictoryFor(board, "X") == None:
     DisplayBoard(board)
     print("It's a tie!")
