@@ -1,4 +1,5 @@
 # DTS-OA2020-Python
+### Just to keep track of my learning progress on DTS Python Program :)
 ### 100% scores! ✅ [LAB + QUIZ + TEST + PROJECT] Solutions
 ### Digital Talent Scholarship (DTS) - Online Academy (OA) 2020 - Python
 
