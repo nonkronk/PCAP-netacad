@@ -3,7 +3,7 @@
 
 import random
 
-priority = 0
+priority = 1
 email = 'irvantristian@gmail.com'
 
 # Check whether a coordinate is in circle or not
@@ -14,7 +14,7 @@ def isPointInCircle(x, y, r, center=(0, 0)):
 def generateRandomSquarePoints(n, length, center=(0, 0)):
     minx = center[0] - length / 2
     miny = center[1] - length / 2
-    points = [(random.uniform(minx, center[0] + length / 2), random.uniform(miny, center[1] + length / 2))
+    points = [[random.uniform(minx, center[0] + length / 2), random.uniform(miny, center[1] + length / 2)]
               for point in range(n)]
     return points
 
