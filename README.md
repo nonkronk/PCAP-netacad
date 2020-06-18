@@ -6,7 +6,3 @@ This repository keeps track all my learning progress on [Cisco Networking Academ
 
 ### Certified Associate in Python Programming certification
 https://pythoninstitute.org/certification/pcap-certification-associate/
-
-
-Educational purpose only.\
-:)
