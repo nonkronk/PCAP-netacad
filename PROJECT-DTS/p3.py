@@ -15,7 +15,7 @@ def caesar_encript(txt, shift):
                 text_list[i] = chr((asc - 97 + shift) % 26 + 97)
             else:
                 text_list[i] = chr((asc - 65 + shift) % 26 + 65)
-    return "".join(text_list)
+    return ''.join(text_list)
 
 # Decrypt with caesar
 def caesar_decript(chiper, shift):
@@ -47,6 +47,7 @@ def receive_batch(batch_cpr, batch_order, shift=3):
         i, batch_order), shift) for i in batch_cpr]
     return ''.join(batch_txt).strip('_')
 
+# Run directly
 if __name__ == '__main__':
     
     # Sanity check #1
