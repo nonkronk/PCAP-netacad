@@ -27,7 +27,7 @@ def shuffle_order(txt, order):
 
 # De-shuffle order of string
 def deshuffle_order(sftxt, order):
-    return ''.join([sftxt[order[i]] for i in order])
+    return ''.join([sftxt[order.index(i)] for i in range(len(order))])
 
 # Encrypt & split encrypted text in to n-char batchs & shuffle chars inside all the batchs
 def send_batch(txt, batch_order, shift=3):
