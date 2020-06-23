@@ -1,7 +1,7 @@
 # Project 3
 # Irvan Tristian - 0447356121-105
 
-priority = 0
+priority = 1
 email = 'irvantristian@gmail.com'
 
 # Encrypt with caesar
