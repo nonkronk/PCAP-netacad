@@ -42,7 +42,5 @@ if __name__ == '__main__':
     for i in range(9):
         row = input()
         num_list.append(list(row))
-    if not is_sudoku(num_list):
-        print('No')
-    else:
-        print('Yes')
+    msg = 'Yes' if is_sudoku(num_list) else 'No'
+    print(msg)
