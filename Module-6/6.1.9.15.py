@@ -6,8 +6,7 @@ try:
     for i in range(ord('a'), ord('a') + 26):
         letter[chr(i)] = 0
     for line in f:
-        line.lower()
-        for ch in line:
+        for ch in line.lower():
             if ch in letter.keys():
                 letter[ch] += 1
     for k, v in letter.items():
